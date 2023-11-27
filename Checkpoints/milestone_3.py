@@ -1,11 +1,15 @@
 import random
 
+# Selecting a random word from the list
 favorite_fruits = ['apple', 'banana', 'cherry', 'plum', 'grape']
 word = random.choice(favorite_fruits)
 print('Word: ', word)
+
 def check_guess(guess):
     """
-    Check if the guessed letter is in the word.
+    Check if the guessed letter is in the word and print appropriate feedback.
+    Args:
+        guess (str): The letter guessed by the player.
     """
     guess = guess.lower()
     if guess in word:
@@ -15,7 +19,8 @@ def check_guess(guess):
 
 def ask_for_input():
     """
-    Prompt playerfor a letter; check if it's a valid guess.
+    Prompt the player for a letter and validate the input.
+    Repeats until a valid letter is entered.
     """
     while True:
         guess = input("Guess a letter: ")
