@@ -11,11 +11,15 @@
 
 ## Project Description
 
-This project is a simple implementation of the classic Hangman game in Python. The aim of this project is to demonstrate basic Python programming skills, including control structures, data structures (lists), and user input handling. Through this project, I learned about string manipulation, conditional statements, and the random library in Python.
+This project presents an interactive version of the classic Hangman game, implemented in Python. The game selects a random word from a list, and the player attempts to guess it letter by letter. The aim of this project is not only to demonstrate fundamental Python programming skills—like control structures, data structures, and user input handling—but also to explore object-oriented programming by structuring the game logic within a Python class.
+
+Key learnings from this project include string manipulation, conditional statements, the random library in Python, and the basics of object-oriented programming. The game logic is encapsulated within a Hangman class, showcasing how classes can organize and manage game state and behavior effectively.
 
 ## Installation
 
-To run this project, you need to have Python installed on your system. Python can be downloaded from [python.org](https://www.python.org/downloads/). Once Python is installed, you can clone this repository to your local machine:
+Python is required to run this project. If you don't have Python installed, download and install it from [python.org](https://www.python.org/downloads/).
+
+To get the game, clone this repository to your local machine using:
 
 ```bash
 git clone https://github.com/jmsm1g19/hangman.git
@@ -24,20 +28,20 @@ cd hangman-game
 
 ## Usage
 
-To play the game, run the Python script from the command line:
+Run the game with the following command:
 
 ```bash
 python hangman.py
 ```
 
-Follow the on-screen prompts to guess letters in an attempt to figure out the hidden word. The game continues until you guess the word or run out of attempts.
+During gameplay, guess one letter at a time to reveal the hidden word. The game tracks your number of incorrect guesses, and you have a limited number of lives. The game ends either when you guess the word correctly or run out of lives.
 
 ## File Structure
 
-- `hangman.py`: The main Python script that runs the hangman game.
-- `README.md`: This file, containing documentation and instructions.
+- `hangman.py`: Contains the main Python script for the Hangman game. This script defines a Hangman class responsible for game logic and interactions.
+- `README.md`: Documentation and instructions for the project.
 - `LICENSE`: The license file for the project.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE). See the LICENSE file for details.
+This project is licensed under the [MIT License](LICENSE). For more details, see the LICENSE file in this repository.
