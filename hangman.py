@@ -42,15 +42,19 @@ class Hangman:
                 self.check_guess(guess)
                 print("Word guessed so far:", ' '.join(self.word_guessed))
 
-        self.end_game()
-
     def end_game(self):
         if '_' not in self.word_guessed:
             print("Congratulations! You guessed the word:", self.word)
-        else:
+        elif self.num_lives == 0:
             print("Game over! The word was:", self.word)
 
-# Example usage
+def play_game(word_list):
+    game = Hangman(word_list, num_lives=5)
+
+    while game.num_lives > 0 and '_' in game.word_guessed:
+        game.ask_for_input()
+
+    game.end_game()
+
 favorite_fruits = ['apple', 'banana', 'cherry', 'plum', 'grape']
-game = Hangman(favorite_fruits)
-game.ask_for_input()
+play_game(favorite_fruits)

@@ -11,9 +11,9 @@
 
 ## Project Description
 
-This project presents an interactive version of the classic Hangman game, implemented in Python. The game selects a random word from a list, and the player attempts to guess it letter by letter. The aim of this project is not only to demonstrate fundamental Python programming skills—like control structures, data structures, and user input handling—but also to explore object-oriented programming by structuring the game logic within a Python class.
+This project is an interactive command line Hangman game immplemented in Python. The game selects a random word from a list, and the player attempts to guess it letter by letter. The aim of this project is to demonstrate fundamental Python programming skills like control structures, data structures, and user input handling. We also explore object-oriented programming by structuring the game logic within a Python class.
 
-Key learnings from this project include string manipulation, conditional statements, the random library in Python, and the basics of object-oriented programming. The game logic is encapsulated within a Hangman class, showcasing how classes can organize and manage game state and behavior effectively.
+Key learnings from this project include string manipulation, conditional statements, the random library in Python, and the basics of object-oriented programming. The game logic is encapsulated within a Hangman class, showcasing how classes can organize and manage game state.
 
 ## Installation
 
@@ -34,7 +34,7 @@ Run the game with the following command:
 python hangman.py
 ```
 
-During gameplay, guess one letter at a time to reveal the hidden word. The game tracks your number of incorrect guesses, and you have a limited number of lives. The game ends either when you guess the word correctly or run out of lives.
+Guess one letter at a time to reveal the hidden word. The game tracks your number of incorrect guesses, and you have a limited number of lives. The game ends either when you guess the word correctly or run out of lives.
 
 ## File Structure
 

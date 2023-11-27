@@ -15,7 +15,7 @@ def check_guess(guess):
 
 def ask_for_input():
     """
-    Prompt user for a letter and check if it's a valid guess.
+    Prompt playerfor a letter; check if it's a valid guess.
     """
     while True:
         guess = input("Guess a letter: ")
