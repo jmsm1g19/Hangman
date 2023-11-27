@@ -6,50 +6,45 @@ class Hangman:
         self.word_guessed = ['_' for _ in self.word]
         self.num_letters = len(set(self.word))
         self.num_lives = num_lives
-        self.word_list = word_list
         self.list_of_guesses = []
 
-    def check_guess(self, guess):
+    def update_game_state(self, guess):
         """
-        Check if the guessed letter is in the word and update the game state accordingly.
+        Update the game state when a correct guess is made.
         """
-        guess = guess.lower()
-        if guess in self.word:
-            print(f"Good guess! {guess} is in the word.")
+        new_guess = guess not in self.list_of_guesses
+        self.list_of_guesses.append(guess)
 
-            # Check if the guess is a new correct guess
-            if guess not in self.word_guessed:
-                self.num_letters -= 1  # Decrease the number of unique letters left to guess
-
-            # Replace the underscores with the correctly guessed letter
+        if new_guess:
+            self.num_letters -= 1
             for i, letter in enumerate(self.word):
                 if letter == guess:
                     self.word_guessed[i] = guess
+
+    def check_guess(self, guess):
+        guess = guess.lower()
+        if guess in self.word:
+            print(f"Good guess! {guess} is in the word.")
+            self.update_game_state(guess)
         else:
-            # Handling incorrect guesses
             self.num_lives -= 1
             print(f"Sorry, {guess} is not in the word. You have {self.num_lives} lives left.")
 
     def ask_for_input(self):
-        """
-        Prompt the user for a letter and validate the input.
-        """
-        while True:
-            guess = input("Guess a letter: ")
+        while self.num_lives > 0 and '_' in self.word_guessed:
+            guess = input("Guess a letter: ").lower()
 
-            if not (len(guess) == 1 and guess.isalpha()):
+            if len(guess) != 1 or not guess.isalpha():
                 print("Invalid letter. Please, enter a single alphabetical character.")
             elif guess in self.list_of_guesses:
                 print("You already tried that letter!")
             else:
-                self.list_of_guesses.append(guess)
                 self.check_guess(guess)
-                # Display the current state of the guessed word
                 print("Word guessed so far:", ' '.join(self.word_guessed))
-                if '_' not in self.word_guessed or self.num_lives <= 0:
-                    break  # Exit the loop if the game is over
 
-        # Check for win or lose
+        self.end_game()
+
+    def end_game(self):
         if '_' not in self.word_guessed:
             print("Congratulations! You guessed the word:", self.word)
         else:
