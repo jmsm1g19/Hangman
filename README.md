@@ -1,4 +1,3 @@
-
 # Hangman Game in Python
 
 ## Table of Contents
@@ -25,7 +24,7 @@ Clone the repository to your local machine using:
 
 ```bash
 git clone https://github.com/jmsm1g19/hangman.git
-cd hangman-game
+cd Hangman
 ```
 
 ## Usage
